@@ -3,7 +3,29 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- CONFIGURATION ---
     const FORMSPREE_ID = "mdkqdgdo";
     // ---------------------
+    // --- GESTION MUSIQUE & INTRO ---
+    const startOverlay = document.getElementById('startOverlay');
+    const btnEnter = document.getElementById('btnEnter');
+    const music = document.getElementById('bgMusic');
 
+    // Réglage du volume (0.5 = 50%) pour pas exploser les oreilles
+    music.volume = 0.5;
+
+    btnEnter.addEventListener('click', () => {
+        // 1. On lance la musique
+        music.play().catch(error => {
+            console.log("Lecture auto bloquée par le navigateur :", error);
+        });
+
+        // 2. On fait disparaitre l'écran noir
+        startOverlay.classList.add('fade-out');
+
+        // 3. On le supprime complètement après l'animation (1 seconde)
+        setTimeout(() => {
+            startOverlay.style.display = 'none';
+        }, 1000);
+    });
+    // -------------------------------
     // Récupération des éléments
     const btnSubmit = document.getElementById('btnSubmit');
     const form = document.getElementById('conForm');

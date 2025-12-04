@@ -202,3 +202,23 @@ hr.border-secondary {
         padding: 1.5rem;
     }
 }
+/* L'écran d'accueil qui couvre tout */
+#startOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000; /* Fond noir total */
+    z-index: 9999; /* Au dessus de tout */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 1s ease-out; /* Transition douce quand ça disparait */
+}
+
+/* Classe pour faire disparaitre l'écran */
+.fade-out {
+    opacity: 0;
+    pointer-events: none; /* On ne peut plus cliquer dessus */
+}

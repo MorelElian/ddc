@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +8,20 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
 
+<body>
+    <audio id="bgMusic" loop>
+        <source src="music.mp3" type="audio/mpeg">
+    </audio>
+
+    <div id="startOverlay">
+        <div class="text-center">
+            <h1 class="main-title mb-5">GUESS THE CON</h1>
+            <button id="btnEnter" class="btn btn-neon" style="font-size: 1.5rem; padding: 20px 40px;">
+                🔊 BIENVENUE
+            </button>
+        </div>
+    </div>
     <div class="container d-flex flex-column align-items-center justify-content-center min-vh-100 py-5">
 
         <h1 class="main-title">GUESS THE CON</h1>
@@ -19,11 +32,13 @@
 
                 <div class="mb-4">
                     <label for="bobarmanName" class="form-label">Nom du BôBarman</label>
-                    <input type="text" class="form-control" id="bobarmanName" name="1_Nom_Bobarman" placeholder="Ton blaze..." required>
+                    <input type="text" class="form-control" id="bobarmanName" name="1_Nom_Bobarman"
+                        placeholder="Ton blaze..." required>
                 </div>
 
                 <div class="form-check mb-4">
-                    <input class="form-check-input" type="checkbox" id="checkIdentity" name="2_Identite_Certifiee" required>
+                    <input class="form-check-input" type="checkbox" id="checkIdentity" name="2_Identite_Certifiee"
+                        required>
                     <label class="form-check-label" for="checkIdentity">
                         Je jure que je suis cette personne
                     </label>
@@ -60,8 +75,10 @@
                 <hr class="border-secondary my-4">
 
                 <div class="mb-4">
-                    <label for="bobarmanName" class="form-label">Une anecdote sur un autre Bôbarman, et pourquoi Tom?</label>
-                    <input type="text" class="form-control" id="bobarmanName" name="9_Anecdote_Tom" placeholder="Interdit de mettre la fois ou il a régalé le manteau de mathis" required>
+                    <label for="bobarmanName" class="form-label">Une anecdote sur un autre Bôbarman, et pourquoi
+                        Tom?</label>
+                    <input type="text" class="form-control" id="bobarmanName" name="9_Anecdote_Tom"
+                        placeholder="Interdit de mettre la fois ou il a régalé le manteau de mathis" required>
                 </div>
 
                 <hr class="border-secondary my-4">
@@ -102,8 +119,10 @@
                 </div>
 
                 <div class="form-check mb-4 d-none reveal-step" id="divCheckVictoire">
-                    <input class="form-check-input" type="checkbox" id="checkVictoire" name="Check_Tete_Victoire_Charpy">
-                    <label class="form-check-label text-warning fw-bold" style="text-shadow: 0 0 5px red;" for="checkVictoire">
+                    <input class="form-check-input" type="checkbox" id="checkVictoire"
+                        name="Check_Tete_Victoire_Charpy">
+                    <label class="form-check-label text-warning fw-bold" style="text-shadow: 0 0 5px red;"
+                        for="checkVictoire">
                         Sur la tête de Victoire Charpy
                     </label>
                 </div>
@@ -112,7 +131,8 @@
                     <button type="submit" class="btn btn-neon d-none" id="btnSubmit">ENVOYER</button>
                 </div>
 
-            </form> <div id="successMessage" class="text-center d-none">
+            </form>
+            <div id="successMessage" class="text-center d-none">
                 <h2 class="mb-3">✨ PARTICIPATION VALIDÉE ✨</h2>
                 <p class="lead text-white" id="finalText"></p>
                 <div class="mt-4 fs-1">
@@ -124,4 +144,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
