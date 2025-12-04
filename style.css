@@ -1,0 +1,204 @@
+/* =========================================
+   1. IMPORTATION DES POLICES
+   ========================================= */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Montserrat:wght@400;600;800&display=swap');
+
+/* =========================================
+   2. CONFIGURATION GÉNÉRALE (BODY & FOND)
+   ========================================= */
+body {
+    /* Fond dégradé Disco/Synthwave */
+    background: radial-gradient(circle at center, #2b1055 0%, #1a0b2e 60%, #000000 100%);
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* =========================================
+   3. TITRE DISCO ANIMÉ
+   ========================================= */
+.main-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 2rem;
+
+    /* Effet Néon + Ombre portée 3D */
+    text-shadow:
+        2px 2px 0px #ff00de,
+        -2px -2px 0px #00f2ff,
+        0 0 20px rgba(255, 0, 222, 0.5);
+
+    /* Animation de pulsation */
+    animation: discoPulse 1.5s infinite alternate;
+}
+
+@keyframes discoPulse {
+    0% { transform: scale(1); text-shadow: 2px 2px 0px #ff00de, -2px -2px 0px #00f2ff; }
+    100% { transform: scale(1.02); text-shadow: 4px 4px 0px #ff00de, -4px -4px 0px #00f2ff, 0 0 30px #ff00de; }
+}
+
+/* =========================================
+   4. LA CARTE (FORM CONTAINER)
+   ========================================= */
+.form-container {
+    background: rgba(20, 10, 40, 0.8); /* Violet très sombre et transparent */
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    backdrop-filter: blur(15px); /* Effet verre flouté */
+
+    /* Le Shadowing Disco : Un halo rose/violet */
+    box-shadow:
+        0 0 30px rgba(138, 43, 226, 0.3),
+        inset 0 0 20px rgba(0, 0, 0, 0.8);
+
+    padding: 2rem;
+    max-width: 700px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Petite barre colorée en haut de la carte */
+.form-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, #ff00de, #00f2ff, #ff00de);
+    background-size: 200% 200%;
+    animation: gradientMove 3s ease infinite;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* =========================================
+   5. CHAMPS DE FORMULAIRE (INPUTS)
+   ========================================= */
+.form-label {
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #e0e0e0;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.form-control {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    color: #fff !important;
+    font-size: 1.1rem;
+    padding: 12px;
+    transition: all 0.3s ease;
+}
+
+/* Focus : Quand on clique dans le champ */
+.form-control:focus {
+    background-color: rgba(255, 255, 255, 0.15) !important;
+    border-color: #00f2ff;
+    box-shadow: 0 0 15px rgba(0, 242, 255, 0.4);
+    outline: none;
+}
+
+/* --- LE FIX POUR LES PLACEHOLDERS --- */
+/* Ils seront maintenant bien blancs et lisibles */
+::placeholder {
+    color:#ff00de !important;
+    font-style: italic;
+    opacity: 1;
+}
+:-ms-input-placeholder { color: rgba(207, 59, 59, 0.6) !important; }
+::-ms-input-placeholder { color: rgba(241, 4, 4, 0.6) !important; }
+
+/* =========================================
+   6. CHECKBOXES STYLÉES
+   ========================================= */
+.form-check-input {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid #ff00de;
+    width: 1.3em;
+    height: 1.3em;
+    margin-top: 0.1em;
+    cursor: pointer;
+}
+
+.form-check-input:checked {
+    background-color: #ff00de;
+    border-color: #ff00de;
+    box-shadow: 0 0 10px #ff00de;
+}
+
+.form-check-label {
+    cursor: pointer;
+    margin-left: 0.5rem;
+    font-size: 1rem;
+}
+
+/* Séparateur */
+hr.border-secondary {
+    border-color: #ff00de !important;
+    opacity: 1;
+}
+
+/* =========================================
+   7. BOUTON ENVOYER (LE CLIMAX)
+   ========================================= */
+.btn-neon {
+    background: linear-gradient(45deg, #ff00de, #6f00ff);
+    border: none;
+    color: #fff;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 800;
+    font-size: 1.2rem;
+    padding: 15px;
+    border-radius: 50px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    box-shadow: 0 5px 15px rgba(111, 0, 255, 0.4);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-neon:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(255, 0, 222, 0.6);
+    color: #fff;
+}
+
+.btn-neon:active {
+    transform: translateY(1px);
+}
+
+/* =========================================
+   8. TEXTES SPÉCIAUX & RESPONSIVE
+   ========================================= */
+
+/* Le message de succès */
+#successMessage h2 {
+    font-family: 'Orbitron', sans-serif;
+    color: #00f2ff;
+    text-shadow: 0 0 10px rgba(0, 242, 255, 0.5);
+}
+
+/* Sur mobile */
+@media (max-width: 576px) {
+    .main-title {
+        font-size: 2.2rem;
+    }
+    .card {
+        padding: 1.5rem;
+    }
+}

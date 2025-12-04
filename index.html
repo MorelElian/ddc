@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GUESS THE CON</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container d-flex flex-column align-items-center justify-content-center min-vh-100 py-5">
+
+        <h1 class="main-title">GUESS THE CON</h1>
+
+        <div class="form-container" id="mainCard">
+
+            <form id="conForm" method="POST">
+
+                <div class="mb-4">
+                    <label for="bobarmanName" class="form-label">Nom du BôBarman</label>
+                    <input type="text" class="form-control" id="bobarmanName" name="1_Nom_Bobarman" placeholder="Ton blaze..." required>
+                </div>
+
+                <div class="form-check mb-4">
+                    <input class="form-check-input" type="checkbox" id="checkIdentity" name="2_Identite_Certifiee" required>
+                    <label class="form-check-label" for="checkIdentity">
+                        Je jure que je suis cette personne
+                    </label>
+                </div>
+
+                <hr class="border-secondary my-4">
+
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label class="form-label">Con du 1er B</label>
+                        <input type="text" class="form-control" name="3_Con_1er_B" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Con du Ô</label>
+                        <input type="text" class="form-control" name="4_Con_O" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Con du TDB</label>
+                        <input type="text" class="form-control" name="5_Con_TDB" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Con du A</label>
+                        <input type="text" class="form-control" name="6_Con_A" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Con de la lettre à l'envers</label>
+                        <input type="text" class="form-control" name="7_Con_Lettre_Envers" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Con du R</label>
+                        <input type="text" class="form-control" name="8_Con_R" required>
+                    </div>
+                </div>
+
+                <hr class="border-secondary my-4">
+
+                <div class="form-check mb-3">
+                    <input class="form-check-input" type="checkbox" id="checkShots" name="Check_Shots">
+                    <label class="form-check-label text-danger fw-bold" for="checkShots">
+                        En cas d'échec je suis d'accord avec le fait de boire les shots qui me sont dus
+                    </label>
+                </div>
+
+                <div class="form-check mb-2 d-none reveal-step" id="divCheckCry">
+                    <input class="form-check-input" type="checkbox" id="checkCry" name="Check_No_Cry">
+                    <label class="form-check-label fst-italic" for="checkCry">
+                        Vraiment, je n'aurai pas le droit de chialer
+                    </label>
+                </div>
+
+                <div class="form-check mb-2 d-none reveal-step" id="divCheckReallyNot">
+                    <input class="form-check-input" type="checkbox" id="checkReallyNot" name="Check_Vraiment_Pas">
+                    <label class="form-check-label" for="checkReallyNot">
+                        Vraiment pas
+                    </label>
+                </div>
+
+                <div class="form-check mb-2 d-none reveal-step" id="divCheckSwear">
+                    <input class="form-check-input" type="checkbox" id="checkSwear" name="Check_Je_Le_Jure">
+                    <label class="form-check-label fw-bold" for="checkSwear">
+                        Je le jure
+                    </label>
+                </div>
+
+                <div class="form-check mb-2 d-none reveal-step" id="divCheckParents">
+                    <input class="form-check-input" type="checkbox" id="checkParents" name="Check_Sur_Tete_Parents">
+                    <label class="form-check-label" for="checkParents">
+                        Sur la tête de mon paps/mams
+                    </label>
+                </div>
+
+                <div class="form-check mb-4 d-none reveal-step" id="divCheckVictoire">
+                    <input class="form-check-input" type="checkbox" id="checkVictoire" name="Check_Tete_Victoire_Charpy">
+                    <label class="form-check-label text-warning fw-bold" style="text-shadow: 0 0 5px red;" for="checkVictoire">
+                        Sur la tête de Victoire Charpy
+                    </label>
+                </div>
+
+                <div class="d-grid gap-2 mt-4">
+                    <button type="submit" class="btn btn-neon d-none" id="btnSubmit">ENVOYER</button>
+                </div>
+
+            </form> <div id="successMessage" class="text-center d-none">
+                <h2 class="mb-3">✨ PARTICIPATION VALIDÉE ✨</h2>
+                <p class="lead text-white" id="finalText"></p>
+                <div class="mt-4 fs-1">
+                    🥂
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
